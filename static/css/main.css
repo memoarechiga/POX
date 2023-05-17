@@ -1,0 +1,51 @@
+
+.navText{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+}
+
+.mainimg{
+    width: fit-content;
+    height: fit-content;
+    background-size: cover;
+}
+
+.maintxt{
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.signbtn{
+    width: 160px;
+    height: 60px;
+    text-align: center;
+    padding: 2px;
+}
+
+.cntr{
+    justify-content: center;
+    display: flex;
+}
+
+.intxt{
+    color: aliceblue;
+    text-align: center;
+    padding: 30px;    
+}
+
+.carded{
+    background-color: black;
+    color: aliceblue;
+    margin-bottom: 30px;
+}
+
+.overflow-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+      
+
+
+      

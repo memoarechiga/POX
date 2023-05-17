@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method='POST' class="text-center">
+    {% load widget_tweaks %}
+    {% csrf_token %}
+
+    <div class="container col-md-6 p-4">
+
+        <h4>Articulo:</h4>
+        {{ form.name|add_class:"form-control text-center" }}
+
+        <h4>Precio:</h4>
+        {{ form.price|add_class:"form-control text-center" }}
+
+    </div>
+
+    <a class="btn btn-danger mx-3" href="{% url 'menu_item_list' %}">Cancelar</a>
+    <button class='btn btn-dark mx-3'>Guardar</button>
+    
+
+</form>
+
+{% endblock content %}

@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <title>POX Point of Sale System</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md bg-faded justify-content-center">
+        <div class="container">
+            <a href="{% url 'home' %}" class="navbar-brand d-flex w-50 me-auto">
+                <img src="{% static '/img/logopox.png' %}" alt="" width="80px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar3">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+                <ul class="navbar-nav w-100 justify-content-center navText">
+                    <li class="nav-item active">
+                        <h4><a class="nav-link active mx-auto" href="{% url 'dashboard' %}">Dashboard</a></h4>
+                    </li>
+                    <li class="nav-item">
+                        <h4><a class="nav-link active mx-auto" href="{% url 'new_sale' %}">POS</a></h4>
+                    </li>
+                    <li class="nav-item">
+                      <h4><a class="nav-link active mx-auto" href="#">Reports</a></h4>
+                  </li>
+                </ul>
+                <ul class="nav navbar-nav ms-auto w-100 justify-content-end">
+                    {% if user.is_authenticated %}
+                    <li><a class="nav-link active text-danger" href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                    <li><a class="nav-link active" href="{% url 'register' %}">Sign up</a></li>
+                    <li><a class="nav-link active" href="{% url 'login' %}">Log in</a></li>
+                    {% endif %}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %} {% endblock %}
+
+<script src="{% static 'js/bootstrap.js' %}"></script>
+
+
+</body>
+</html>

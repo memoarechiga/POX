@@ -1,0 +1,94 @@
+{% extends "base_dashboard.html" %}
+
+{% block content %}
+  <h1>Menu</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for menu_item in menu_items %}
+        <tr>
+          <td>
+            <form method="post">
+              {% csrf_token %}
+              <input type="hidden" name="menu_item_id" value="{{ menu_item.id }}">
+              <button id="{{ menu_item.id }}" type="submit">{{ menu_item.name }}</button>
+              <button name="decrease_quantity" type="submit">{{ -1 }}</button>
+              <button type="submit" name="delete_item">Delete</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h1>Cart</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for menu_item_id, data in request.session.cart.items %}
+      {% load custom_filters %}
+        <tr>
+          <td>{{ data.name }}</td>
+          <td>{{ data.price }}</td>
+          <td>{{ data.quantity }}</td>
+          <td> {{ data.price|mul:data.quantity }}</td>   
+        </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <form method="post">
+    {% csrf_token %}
+    <button id="save" type="submit" name="collect">Guardar</button>
+
+    <h1 id="data"> {{ scale.value }} </h1>
+
+    {% block script %}
+    <script>
+        {% for menu_item in menu_items %}
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "{{ menu_item.id }}") {
+                document.getElementById("{{ menu_item.id }}").click();
+            }
+        });
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                document.getElementById("save").click();
+            }
+        });
+        
+        var valueElement = document.getElementById("data")
+
+		function updateData() {
+			let value = parseInt(valueElement.innerText);
+			}
+
+        setInterval(function() {
+            var value = document.getElementById("data").innerHTML;
+            console.log("Value is: " + value);
+          }, 9000);
+
+
+        {% endfor %}
+    </script>
+
+    {% endblock script %}
+
+{% endblock %}
+
+
+    

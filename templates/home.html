@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+    {% extends 'base.html' %}
+
+    {% block content %}
+
+    {% load static %}
+
+<style>
+  .backgr {
+    background-image: url("{% static 'img/backrestaurant.png' %}");
+  }
+</style>
+
+
+<div class="mainimg backgr">
+  <div class="row">
+    <div class="col-lg-5">
+        <div><h1 class="maintxt shadow-in" style="font-size: 55px;">Meet POX: The Next Generation of POS</h1></div>
+        <div><p class="maintxt shadow-in" style="font-size: 25px;">Future POS has evolved into POX, a modern cloud-based POS solution that will transform your restaurant's operations — from front-of-house to back-of-house and everything in between.</p></div>
+            <div class="cntr p-2" >
+               <a href="{% url 'register' %}"><button type="button" class="btn btn-dark signbtn">Register</button></a>
+     </div>
+</div>
+    <div class="col-lg-7">
+            <div><img src="{% static 'img/monitor.png' %}" class="img-fluid" data-aos="zoom-in" alt=""></div>
+        </div>
+    </div>
+</div>
+
+<div class="justify-content-center" style="background-color: black;">
+    <div><h1 class="intxt">Work Smarter, Not Harder</h1></div>
+    <div><p class="intxt" style="font-size: 25px;">There's more to your business than what happens at the point of sale. Your back office command center, Lighthouse, puts you in control anytime, anywhere.</p></div>
+        <div class="row justify-content-center d-flex">
+            <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card text-center text-bg-light p-3 mb-5 mt-2" style="width: 18rem;" data-aos="fade-down">
+            <div class="card-body-dark">
+                <h5 class="card-title">REPORTING & ANALYTICS</h5>
+                <p class="card-text">Take the guesswork out of business decisions and boost your bottom line.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12">
+        <div class="card text-center text-bg-light p-3 mb-5 mt-2" style="width: 18rem;" data-aos="fade-down">
+        <div class="card-body-dark">
+            <h5 class="card-title">POS MANAGEMENT</h5>
+            <p class="card-text">Make changes to your menu on the fly and sync to the POS system.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12">
+        <div class="card text-center text-bg-light p-3 mb-5 mt-2" style="width: 18rem;" data-aos="fade-down">
+        <div class="card-body-dark">
+            <h5 class="card-title">YOU'RE IN CHARGE</h5>
+            <p class="card-text">Keep a pulse on your business no matter where you are with the InCharge mobile app.</p>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'img/cashier.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+    <div class="mt-5 mb-5">
+    <h1 class=" text-center">An Operating System for Your Restaurant</h1>
+    <h3 class="text-center">POX is more than just a POS system. It's an all-in-one restaurant platform that will help you manage every aspect of your business.</h3>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 g-4 p-4">
+        <div class="col-lg-3">
+          <div class="card text-center border-0">
+            <img src="{% static 'img/icnstore.png' %}" class="card-img-top w-25 h-25 m-auto">
+            <div class="card-body">
+              <h5 class="card-title">Multi-Store Support</h5>
+              <p class="card-text"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card text-center border-0">
+              <img src="{% static 'img/icncard.png' %}" class="card-img-top w-25 h-25 m-auto">
+              <div class="card-body">
+                <h5 class="card-title">Debit & Credit Card</h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card text-center border-0">
+              <img src="{% static 'img/icnstats.png' %}" class="card-img-top w-25 h-25 m-auto" >
+              <div class="card-body">
+                <h5 class="card-title">Stadistics Anywhere</h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card text-center border-0">
+              <img src="{% static 'img/icntimer.png' %}" class="card-img-top w-25 h-25 m-auto" >
+              <div class="card-body">
+                <h5 class="card-title">Employees Control</h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+    </div>    
+</div>
+
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <p class="col-md-4 mb-0 text-muted">&copy; 2023 POX, Inc</p>
+  
+      <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      </a>
+  
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Restaurant</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Retails</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Tortilleria</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+      </ul>
+    </footer>
+  </div>
+
+    {% endblock %}
+    

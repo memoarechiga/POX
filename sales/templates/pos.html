@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class='row'>
+    <div class='col-5 p-4 mx-auto'>
+        {% for x in menu  %}
+
+        <button class="btn btn-secondary mx-2 p-2">{{ x.name }}</button>
+
+        {% endfor %}
+    </div>
+    <div class='col-7'>
+        <form method="post" enctype="multipart/form-data" class="text-center">
+        {% load widget_tweaks %}
+        {% csrf_token %}
+
+        <div class="mb-3 row p-3 flex">
+            <div class="col-md-4">
+                <label for="formGroupExampleInput" class="form-label">Articulo</label><br>
+                {{ form.name|attr:"class:form-control " }}
+            </div>
+            <div class="col-md-2">
+                <label for="formGroupExampleInput" class="form-label">Cantidad</label><br>
+                {{ form.quantity|attr:"class:form-control " }}
+            </div>
+            <div class="col-md-3">
+                <label for="formGroupExampleInput" class="form-label">Precio</label><br>
+                {{ form.price|attr:"class:form-control " }}
+            </div>
+            <div class="col-md-3">
+                <label for="formGroupExampleInput" class="form-label">Total</label><br>
+                {{ form.total|attr:"class:form-control " }}
+            </div>
+        </div>
+            <button class="btn btn-dark my-5" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+    
+{% endblock %}
+
+
+
+

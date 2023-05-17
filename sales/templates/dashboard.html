@@ -1,0 +1,24 @@
+{% extends 'base_dashboard.html' %}
+
+{% block content %}
+
+    <div class="row p-4">
+        <div class="card text-bg-light mb-3 col-md-4 mx-3" style="max-width: 18rem; max-height: 10rem;">
+            <div class="card-header bg-light">Ventas del Dia</div>
+            <div class="card-body">
+              <h5 class="card-title">{{ today.date }}</h5>
+              <h1 class="card-text">{{ day_sum|floatformat:2 }}</h1>
+            </div>
+        </div>
+        <div class="card text-bg-light mb-3 col-md-4 mx-3" style="max-width: 18rem; max-height: 10rem;">
+            <div class="card-header bg-light">Ventas del Mes</div>
+            <div class="card-body">
+              <h5 class="card-title">{{ month }}</h5>
+              <h1 class="card-text">{{ total_sum|floatformat:2 }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <a class="btn btn-dark" href="{% url 'menu_item_list' %}">Articulos</a>
+
+{% endblock content %}
